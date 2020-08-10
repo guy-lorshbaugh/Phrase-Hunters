@@ -28,9 +28,8 @@ class Game:
     def start(self):
         self.welcome()
         while self.missed < 5 and self.active_phrase.check_complete(self.guesses) == False:
-            if _ in guesses:
-                print("You've guessed the following lettters:", *self.guesses)    
-            print(f"You have used {self.missed} out of 5 guesses.\n")
+
+            print(f"You have used {self.missed} of 5 incorrect guesses.\n")
             self.active_phrase.display(self.guesses)
             self.user_guess = self.get_guess()
             self.guesses.append(self.user_guess)
