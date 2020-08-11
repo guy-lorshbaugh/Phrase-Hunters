@@ -5,23 +5,19 @@ class Phrase:
         self.phrase = phrase.lower()
         
     def display(self, guesses):
-        self.letters = []
-        self.output = []
-        self.letters.extend(self.phrase)
-        for letter in self.letters:
-            if letter == " ":
-                self.output.append(" ")
-            elif letter in guesses:
-                self.output.append(letter)
+        for letter in self.phrase:
+            if letter in guesses:
+                print(f"{letter}", end = " ")
             else:
-                self.output.append("_")
-        print("***  ", *self.output, "  ***\n")
+                print("_", end = " ")
+        print("\n")
+        # print("***  ", *self.output, "  ***\n")
         if len(guesses) > 1:
             print("You've guessed the following lettters:", *guesses, "\n")  
         
 
     def check_guess(self, guess):
-        if guess in self.letters:
+        if guess in self.phrase:
             return True
         else:
             return False
