@@ -16,7 +16,7 @@ class Phrase:
             else:
                 self.output.append("_")
         print("***  ", *self.output, "  ***\n")
-        if len(guesses) > 0:
+        if len(guesses) > 1:
             print("You've guessed the following lettters:", *guesses, "\n")  
         
 
@@ -27,13 +27,7 @@ class Phrase:
             return False
 
     def check_complete(self, guesses):
-        self.letters = []
-        # print(self.phrase)
-        self.letters.extend(self.phrase)
-        print(self.letters)
-        print(guesses)
-        # for guess in guesses:
-        if guesses not in self.letters:
-            return False
-        else: 
-            return True
+        for letter in self.phrase:
+            if letter not in guesses:
+                return False
+        return True
