@@ -17,6 +17,7 @@ class Game:
         self.guesses = [" "]
 
     def welcome(self):
+        '''Prints the welcome message.'''
         stars = "*" * 39
         print(f"""
         {stars}
@@ -26,6 +27,7 @@ class Game:
         """)
 
     def start(self):
+        '''Runs the game script.'''
         self.welcome()
         print("Your category today is Movie Quotes.\n")
         while self.missed < 5 and self.active_phrase.check_complete(self.guesses) == False:
@@ -39,6 +41,7 @@ class Game:
         self.game_over()
 
     def get_guess(self):
+        '''Takes guess from user.'''
         self.guess = None
         self.guess = input("Guess a letter!  ")
         while len(self.guess) > 1 or self.guess.isalpha() is False:
@@ -46,6 +49,8 @@ class Game:
         return self.guess 
 
     def game_over(self):
+        '''Tells user the outcome of the game.
+        Runs play_again() script.'''
         if self.missed == 5:
             print("""
         Sorry, GAME OVER! You've used all your guesses!
@@ -60,6 +65,7 @@ class Game:
         self.play_again()
 
     def play_again(self):
+        '''Prompts user to play again or quit.'''
         prompt = input("Would you like to play another round? (Y/N)  ")
         if prompt.lower() == 'y':
             game = Game()
