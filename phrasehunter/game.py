@@ -60,8 +60,8 @@ class Game:
         self.play_again()
 
     def play_again(self):
-        self.input = input("Would you like to play another round? (Y/N)  ")
-        if self.input.lower() == 'y':
+        prompt = input("Would you like to play another round? (Y/N)  ")
+        if prompt.lower() == 'y':
             game = Game()
             game.start()
         else:
