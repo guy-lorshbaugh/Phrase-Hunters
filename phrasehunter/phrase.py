@@ -1,7 +1,7 @@
 class Phrase:
     def __init__(self, phrase):
-        '''Converts the phrases provided in Game class
-        into lowercase for processing in the script.
+        '''Converts the phrases provided into 
+        lowercase for processing in the script.
         '''
         self.phrase = phrase.lower()
         
@@ -22,7 +22,7 @@ class Phrase:
 
     def check_guess(self, guess):
         '''Checks user guess against the puzzle phrase.'''
-        if guess in self.phrase:
+        if guess.lower() in self.phrase:
             return True
         else:
             return False

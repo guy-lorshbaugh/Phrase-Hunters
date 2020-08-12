@@ -34,7 +34,7 @@ class Game:
             print(f"\nYou have used {self.missed} of 5 incorrect guesses.\n")
             self.active_phrase.display(self.guesses)
             self.user_guess = self.get_guess()
-            self.guesses.append(self.user_guess)
+            self.guesses.append(self.user_guess.lower())
             if not self.active_phrase.check_guess(self.user_guess):
                 self.missed += 1
                 print(f"\nSorry, '{self.user_guess}' is not in the phrase!\n")
